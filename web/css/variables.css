@@ -1,0 +1,56 @@
+:root {
+  /* ------------------------------
+     Grundfarben
+  ------------------------------ */
+  --color-background: #ffffff;      /* Hell-Hintergrund */
+  --color-surface: #f5f5f5;         /* Sekundärer Bereich / Karten */
+  --color-text-primary: #111111;    /* Haupttext */
+  --color-text-secondary: #555555;  /* Sekundärer Text */
+  --color-border: #dddddd;          /* Grenzen / Linien */
+
+  /* ------------------------------
+     Dunkle Variante (optional)
+  ------------------------------ */
+  --color-background-dark: #111111;  /* Dunkler Hintergrund */
+  --color-surface-dark: #1c1c1c;     /* Sekundäre Fläche */
+  --color-text-primary-dark: #f5f5f5;
+  --color-text-secondary-dark: #aaaaaa;
+  --color-border-dark: #333333;
+
+  /* ------------------------------
+     Akzentfarben
+  ------------------------------ */
+  --color-accent: #00bcd4;           /* Cyan-Akzent für Buttons, Links */
+  --color-accent-light: #b2ebf2;     /* Leichte Version für Hover / Highlights */
+  --color-accent-dark: #008ba3;      /* Dunklere Version für aktive Zustände */
+
+  /* ------------------------------
+     Statusfarben
+  ------------------------------ */
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-error: #f44336;
+
+  /* ------------------------------
+     Typografie & Spacing (optional)
+  ------------------------------ */
+  --font-size-base: 16px;
+  --font-size-heading: 24px;
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+:root {
+  --color-background: #111111;
+  --color-surface: #1c1c1c;
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #aaaaaa;
+  --color-border: #333333;
+
+  --color-accent: #00bcd4; /* optional gleicher Akzent */
+  }
+}
