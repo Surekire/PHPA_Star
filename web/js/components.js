@@ -3,7 +3,6 @@ customElements.define('dropdown-menu', DropDown);
 
 document.addEventListener("click", (e) => {
     const path = e.composedPath();
-    console.log("test");
     document.querySelectorAll("dropdown-menu.open").forEach(d => {
         if (!path.includes(d)) {
             d.classList.remove("open");

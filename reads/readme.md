@@ -1,8 +1,3 @@
-Klar! Ich erstelle dir eine **übersichtliche Markdown-Datei**, die alle gängigen Möglichkeiten in Markdown kategorisiert, mit Beispielen.
-
----
-
-`
 # Markdown Referenz
 
 Eine Übersicht über alle wichtigen Möglichkeiten, die Markdown unterstützt.
