@@ -5,18 +5,40 @@
         <link rel="stylesheet" href="css/main.css">
         
         <script type="module" src="js/components.js"></script>
+        <script type="module" src="js/themes.js"></script>
     </head>
 
 
-    <body data-theme="dark">
+    <body data-theme="solar">
         <h1>Test Seite</h1>
         <p>Hier ist noch ein text drunter um zu sehen ob das so funktioniert oder nicht!</p>
 
         <dropdown-menu>
-            <p>Hiii</p>
+            <img src="https://static.thenounproject.com/png/4890377-200.png" alt="Dropdown">
             <div>
                 <p>123</p>
                 <p>345</p>
+                <p>noch irgendwas</p>
+                <dropdown-menu id="theme_selector">
+                    <p>Themes</p>
+                    <div>
+                        <p>dark</p>
+                        <p>light</p>
+                        <p>solar</p>
+                        <p>nord</p>
+                        <p>dracula</p>
+                        <p>material-blue</p>
+                        <p>forest</p>
+                    </div>
+                </dropdown-menu>
+                <dropdown-menu>
+                    <img src="https://static.thenounproject.com/png/4890377-200.png" alt="dropdown">
+                    <div>
+                        <p>Irgendwleche exta sachen</p>
+                        <p>die man hier machen kann</p>
+                        <p>oder auch nicht</p>
+                    </div>
+                </dropdown-menu>
             </div>
         </dropdown-menu>
 

@@ -16,3 +16,34 @@ h1 {
 p {
     color: var(--Text_2);
 }
+
+dropdown-menu > .list > p:hover {
+    outline: 1px solid var(--Act_2);
+    margin: 0;
+}
+
+dropdown-menu * {
+    margin: 0;
+}
+
+dropdown-menu.open > .list {
+    display: block;
+}
+
+dropdown-menu > .list {
+    display: none;
+}
+
+dropdown-menu > .btn:hover > p{
+    color: var(--Act_1);
+}
+
+dropdown-menu > .btn:hover > img{
+    width: 25px;
+    height: 25px;
+}
+
+dropdown-menu > .btn > img{
+    width: 20px;
+    height: 20px;
+}
