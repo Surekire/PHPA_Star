@@ -1,56 +1,97 @@
-:root {
-  /* ------------------------------
-     Grundfarben
-  ------------------------------ */
-  --color-background: #ffffff;      /* Hell-Hintergrund */
-  --color-surface: #f5f5f5;         /* Sekundärer Bereich / Karten */
-  --color-text-primary: #111111;    /* Haupttext */
-  --color-text-secondary: #555555;  /* Sekundärer Text */
-  --color-border: #dddddd;          /* Grenzen / Linien */
-
-  /* ------------------------------
-     Dunkle Variante (optional)
-  ------------------------------ */
-  --color-background-dark: #111111;  /* Dunkler Hintergrund */
-  --color-surface-dark: #1c1c1c;     /* Sekundäre Fläche */
-  --color-text-primary-dark: #f5f5f5;
-  --color-text-secondary-dark: #aaaaaa;
-  --color-border-dark: #333333;
-
-  /* ------------------------------
-     Akzentfarben
-  ------------------------------ */
-  --color-accent: #00bcd4;           /* Cyan-Akzent für Buttons, Links */
-  --color-accent-light: #b2ebf2;     /* Leichte Version für Hover / Highlights */
-  --color-accent-dark: #008ba3;      /* Dunklere Version für aktive Zustände */
-
-  /* ------------------------------
-     Statusfarben
-  ------------------------------ */
-  --color-success: #4caf50;
-  --color-warning: #ff9800;
-  --color-error: #f44336;
-
-  /* ------------------------------
-     Typografie & Spacing (optional)
-  ------------------------------ */
-  --font-size-base: 16px;
-  --font-size-heading: 24px;
-  --spacing-small: 8px;
-  --spacing-medium: 16px;
-  --spacing-large: 32px;
+/* ---------------- LIGHT THEME ---------------- */
+[data-theme="light"] {
+  --Act_1: #007aff;        /* primary action */
+  --Act_2: #0051a3;        /* secondary action */
+  --Main_1: #ffffff;       /* main background */
+  --Main_2: #f0f0f0;       /* secondary background */
+  --Text_1: #000000;       /* main text */
+  --Text_2: #555555;       /* secondary text */
+  --Border_1: #cccccc;     /* main border color */
+  --Border_2: #e0e0e0;     /* secondary boder color */
+  --Accent_1: #ff9500;     /* main accent */
+  --Accent_2: #ff3b30;     /* secondary accent */
 }
 
+/* ---------------- DARK THEME ---------------- */
+[data-theme="dark"] {
+  --Act_1: #4da3ff;
+  --Act_2: #1d66b5;
+  --Main_1: #1a1a1a;
+  --Main_2: #2a2a2a;
+  --Text_1: #ffffff;
+  --Text_2: #bbbbbb;
+  --Border_1: #444444;
+  --Border_2: #666666;
+  --Accent_1: #ff9500;
+  --Accent_2: #ff453a;
+}
 
+/* ---------------- SOLARIZED ---------------- */
+[data-theme="solar"] {
+  --Act_1: #b58900;
+  --Act_2: #cb4b16;
+  --Main_1: #fdf6e3;
+  --Main_2: #eee8d5;
+  --Text_1: #657b83;
+  --Text_2: #586e75;
+  --Border_1: #93a1a1;
+  --Border_2: #839496;
+  --Accent_1: #2aa198;
+  --Accent_2: #268bd2;
+}
 
-@media (prefers-color-scheme: dark) {
-:root {
-  --color-background: #111111;
-  --color-surface: #1c1c1c;
-  --color-text-primary: #f5f5f5;
-  --color-text-secondary: #aaaaaa;
-  --color-border: #333333;
+/* ---------------- NORD THEME ---------------- */
+[data-theme="nord"] {
+  --Act_1: #81a1c1;
+  --Act_2: #5e81ac;
+  --Main_1: #2e3440;
+  --Main_2: #3b4252;
+  --Text_1: #d8dee9;
+  --Text_2: #e5e9f0;
+  --Border_1: #4c566a;
+  --Border_2: #434c5e;
+  --Accent_1: #88c0d0;
+  --Accent_2: #8fbcbb;
+}
 
-  --color-accent: #00bcd4; /* optional gleicher Akzent */
-  }
+/* ---------------- DRACULA THEME ---------------- */
+[data-theme="dracula"] {
+  --Act_1: #ff79c6;
+  --Act_2: #bd93f9;
+  --Main_1: #282a36;
+  --Main_2: #44475a;
+  --Text_1: #f8f8f2;
+  --Text_2: #6272a4;
+  --Border_1: #6272a4;
+  --Border_2: #44475a;
+  --Accent_1: #50fa7b;
+  --Accent_2: #8be9fd;
+}
+
+/* ---------------- MATERIAL BLUE ---------------- */
+[data-theme="material-blue"] {
+  --Act_1: #2196f3;
+  --Act_2: #1976d2;
+  --Main_1: #ffffff;
+  --Main_2: #f5f5f5;
+  --Text_1: #212121;
+  --Text_2: #616161;
+  --Border_1: #e0e0e0;
+  --Border_2: #bdbdbd;
+  --Accent_1: #ff5722;
+  --Accent_2: #ffc107;
+}
+
+/* ---------------- FOREST GREEN ---------------- */
+[data-theme="forest"] {
+  --Act_1: #4caf50;
+  --Act_2: #388e3c;
+  --Main_1: #e8f5e9;
+  --Main_2: #c8e6c9;
+  --Text_1: #1b5e20;
+  --Text_2: #2e7d32;
+  --Border_1: #a5d6a7;
+  --Border_2: #81c784;
+  --Accent_1: #ffeb3b;
+  --Accent_2: #ffc107;
 }

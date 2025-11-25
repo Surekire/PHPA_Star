@@ -1,10 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 
-TEST_CASE("main") {
+TEST_CASE("test_test") {
     CHECK((1) == (1));
-}
-
-TEST_CASE("irgendwas") {
-    CHECK(true);
 }
