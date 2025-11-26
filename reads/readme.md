@@ -48,8 +48,8 @@ Eine Übersicht über alle wichtigen Möglichkeiten, die Markdown unterstützt.
 ### Aufgabenliste (Checkbox)
 
 - [x] Erledigt
-- [ ] Offen
-- [ ] In Arbeit
+- [x] Offen
+- [x] In Arbeit
 
 ---
 
@@ -156,3 +156,9 @@ Anderer Begriff
 
 \*Nicht kursiv\*
 \# Kein Heading
+
+## 15. LaTeX
+
+mit \$\<LaTeX Code\>\$
+$let\ \varepsilon = 0$
+$\underset{n=1}{\overset{\infty}\sum} \frac{1}{n} = \infty$

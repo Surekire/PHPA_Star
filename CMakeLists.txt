@@ -15,9 +15,6 @@ target_include_directories(PHPA_star PRIVATE include)
 
 enable_testing()
 
-
-
-
 file(GLOB TEST_FILES "tests/*.cpp")
 
 foreach(TEST_FILE ${TEST_FILES})
