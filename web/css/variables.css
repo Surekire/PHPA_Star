@@ -99,16 +99,68 @@
 [data-theme="test"] {
   --Act_1: #006994;   /* Tiefes Meeresblau */
   --Act_2: #00a2c7;   /* Klarer Ozeanton */
-
   --Main_1: #4fc3f7;  /* Helles Tropenwasser */
   --Main_2: #a7e3ff;  /* Himmelblau / seichter Strandbereich */
-
   --Text_1: #2a3b47;  /* Dunkles, angenehmes Blau für Lesbarkeit */
   --Text_2: #4f6975;  /* Dezenter Zweittextfarbton */
-
   --Border_1: #82e0ff; /* Wellenkanten / helle Wasserreflektion */
   --Border_2: #4abccd; /* Etwas stärkerer Wasserfarbton für Konturen */
-
   --Accent_1: #ffd27f; /* Sand / leicht sonniger Akzent */
   --Accent_2: #ffb347; /* Wärmere Sonnenreflexe */
+}
+
+/*neon lights test*/
+[data-theme="neon"]{
+  --Act_1: #ffb58e;
+  --Act_2: #fd8b72;
+  --Main_1: #000000;
+  --Main_2: #000000;
+  --Text_1: #ffffff;
+  --Text_2: #ffffff;
+  --Border_1: #fc6e22;
+  --Border_2: #81c784;
+  --Accent_1: #ef4100;
+  --Accent_2: #ffc107; 
+}
+
+/*sunset, washed out*/
+[data-theme="sunset"]{
+  --Act_1: #ff995f;
+  --Act_2: #fd8641;
+  --Main_1: #ffab8f;
+  --Main_2: #e9998a;
+  --Text_1: #000000;
+  --Text_2: #000000;
+  --Border_1: #f9653cb0;
+  --Border_2: #ff995a;
+  --Accent_1: #ff703b;
+  --Accent_2: #f8d05a; 
+}
+
+/*stolefromcanva vol.1*/
+[data-theme="stoleit"]{
+  --Act_1: #763626;
+  --Act_2: #763626;
+  --Main_1: #90afc5;
+  --Main_2: #336b87;
+  --Text_1: #2a3132;
+  --Text_2: #2a3132;
+  --Border_1: #763626;
+  --Border_2: #763626;
+  --Accent_1: #763626;
+  --Accent_2: #763626; 
+}
+
+/*stolefromcanva vol.2*/
+[data-theme="kreativername"]{
+  --Act_1: #2a3132;
+  --Act_2: #2a3132;
+  --Main_1: #90afc5;
+  --Main_2: #336b87;
+  --Text_1: #763626;
+  --Text_2: #763626;
+  --Border_1: #2a3132;
+  --Border_2: #2a3132;
+  --Accent_1: #2a3132;
+  --Accent_2: #2a3132; 
 }

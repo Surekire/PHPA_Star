@@ -1,5 +1,5 @@
 side-pannel {
-    width: 200px;
+    width: 300px;
     flex-shrink: 0;
     background-color: var(--Main_2);
 }
