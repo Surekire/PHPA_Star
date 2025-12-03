@@ -1,5 +1,5 @@
 dropdown-menu > .list > p:hover {
-    outline: 1px solid var(--Act_2);
+    outline: 1px solid var(--Accent_2);
     margin: 0;
 }
 
@@ -16,7 +16,7 @@ dropdown-menu > .list {
 }
 
 dropdown-menu > .btn:hover > p{
-    color: var(--Act_1);
+    color: var(--Accent_1);
 }
 
 dropdown-menu > .btn:hover > img{

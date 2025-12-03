@@ -95,3 +95,20 @@
   --Accent_1: #ffeb3b;
   --Accent_2: #ffc107;
 }
+
+[data-theme="test"] {
+  --Act_1: #006994;   /* Tiefes Meeresblau */
+  --Act_2: #00a2c7;   /* Klarer Ozeanton */
+
+  --Main_1: #4fc3f7;  /* Helles Tropenwasser */
+  --Main_2: #a7e3ff;  /* Himmelblau / seichter Strandbereich */
+
+  --Text_1: #2a3b47;  /* Dunkles, angenehmes Blau für Lesbarkeit */
+  --Text_2: #4f6975;  /* Dezenter Zweittextfarbton */
+
+  --Border_1: #82e0ff; /* Wellenkanten / helle Wasserreflektion */
+  --Border_2: #4abccd; /* Etwas stärkerer Wasserfarbton für Konturen */
+
+  --Accent_1: #ffd27f; /* Sand / leicht sonniger Akzent */
+  --Accent_2: #ffb347; /* Wärmere Sonnenreflexe */
+}
