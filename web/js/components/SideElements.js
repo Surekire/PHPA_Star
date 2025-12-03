@@ -9,3 +9,9 @@ export class Footer extends HTMLElement {
         super();
     }
 }
+
+export class SidePannel extends HTMLElement {
+    constructor() {
+        super();
+    }
+}

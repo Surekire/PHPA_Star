@@ -1,49 +1,50 @@
-body {
-    background-color: var(--Main_1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+html, body {
+    height: 100%;
     margin: 0;
-    text-align: center;
 }
 
 h1 {
-    color: var(--Text_1);
-}
-
-p {
     color: var(--Text_2);
 }
 
-dropdown-menu > .list > p:hover {
-    outline: 1px solid var(--Act_2);
-    margin: 0;
+p {
+    color: var(--Text_1);
 }
 
-dropdown-menu * {
-    margin: 0;
+
+body {
+    min-height: 100vh;
 }
 
-dropdown-menu.open > .list {
-    display: block;
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-dropdown-menu > .list {
-    display: none;
+.app > .middle {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0; /* WICHTIG wegen Scroll-Problemen */
 }
 
-dropdown-menu > .btn:hover > p{
-    color: var(--Act_1);
+.main_view {
+    background-color: var(--Main_1);
+    display: flex;
+    flex: 1 1 auto;
+    overflow: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-dropdown-menu > .btn:hover > img{
-    width: 25px;
-    height: 25px;
+header-bar {
+    height: 50px;
+    background-color: var(--Main_2);
 }
 
-dropdown-menu > .btn > img{
-    width: 20px;
+footer-bar {
     height: 20px;
+    background-color: var(--Main_2);
 }

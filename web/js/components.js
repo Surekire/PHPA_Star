@@ -13,5 +13,6 @@ document.addEventListener("click", (e) => {
 
 
 import * as SideElements from "./components/SideElements.js";
-customElements.define('header', SideElements.Header);
-customElements.define('footer', SideElements.Footer);
+customElements.define('header-bar', SideElements.Header);
+customElements.define('footer-bar', SideElements.Footer);
+customElements.define('side-pannel', SideElements.SidePannel);
