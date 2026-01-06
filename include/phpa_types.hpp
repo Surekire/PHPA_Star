@@ -55,7 +55,6 @@ struct Node {
 };
 
 //Point Definition, default is N = 2 and Type = int
-//Size: N * 4 + 8 Bytes -> Default 16 Bytes
 //
 //graph is an Adjazentcy List 
 template<std::size_t N = 2, typename T = int>
@@ -64,7 +63,8 @@ struct Level {
     
 };
 
+//Point Definition, default is N = 2 and Type = int
 template<std::size_t N = 2, typename T = int>
 struct Hierachie {
-    std::vector<Level<N,T>>
+    std::vector<Level<N,T>>;
 };
