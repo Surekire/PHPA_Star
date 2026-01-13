@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstddef>
+#include <cstdint>
 #include <array>
 #include <vector>
 
@@ -63,8 +64,22 @@ struct Level {
     
 };
 
+template<std::size_t N = 2, typename T = int, typename indexType = uint32_t>
+struct CSRLevel {
+    // --- CSR-Struktur ---
+    std::vector<indexType> row_ptr;   // size = num_nodes + 1
+    std::vector<indexType> col_idx;   // size = num_edges
+    std::vector<float>    weight;    // optional, size = num_edges
+
+    // --- Knotendaten (SoA) ---
+    std::vector<Position<N,T>> pos;        // size = num_nodes
+    std::vector<uint16_t>      level;      // size = num_nodes
+    std::vector<uint32_t>      clusterID;  // size = num_nodes
+};
+
+
 //Point Definition, default is N = 2 and Type = int
 template<std::size_t N = 2, typename T = int>
 struct Hierachie {
-    std::vector<Level<N,T>>;
+    std::vector<CSRLevel<N,T>>;
 };
