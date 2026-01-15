@@ -64,7 +64,8 @@ struct Level {
     
 };
 
-template<std::size_t N = 2, typename T = int, typename indexType = uint32_t>
+
+template<std::size_t pos_dim = 2, typename pos_type = int, typename indexType = uint32_t>
 struct CSRLevel {
     // --- CSR-Struktur ---
     std::vector<indexType> row_ptr;   // size = num_nodes + 1
@@ -72,14 +73,52 @@ struct CSRLevel {
     std::vector<float>    weight;    // optional, size = num_edges
 
     // --- Knotendaten (SoA) ---
-    std::vector<Position<N,T>> pos;        // size = num_nodes
+    std::vector<Position<pos_dim,pos_type>> pos;        // size = num_nodes
     std::vector<uint16_t>      level;      // size = num_nodes
     std::vector<uint32_t>      clusterID;  // size = num_nodes
+
+    // --- Metadaten ---
+    uint64_t node_count = 0;
+    uint64_t edge_count = 0;
+    uint16_t hierachie_level;
+    const std::size_t position_dimesion = pos_dim;
+
+    struct {
+        bool error = false;
+        bool clusterd = false;
+    } flags;
+
+
+
+    CSRLevel() = default;
+    CSRLevel(int num_nodes) {
+        row_ptr.resize(num_nodes + 1);
+        clusterID.resize(num_nodes);
+        node_count = num_nodes;
+    }
+    CSRLevel(std::vector<indexType>& col_idx, std::vector<indexType>& row_ptr) {
+        node_count = row_ptr.size();
+        this->row_ptr = row_ptr;
+        this->col_idx = col_idx;
+
+        clusterID.resize(node_count);
+    }
+    CSRLevel(std::vector<int>& col_idx, std::vector<int>& row_ptr) {
+        node_count = row_ptr.size();
+        this->row_ptr = row_ptr;
+        this->col_idx = col_idx;
+
+        clusterID.resize(node_count);
+    }
+    
+
 };
 
 
 //Point Definition, default is N = 2 and Type = int
 template<std::size_t N = 2, typename T = int>
 struct Hierachie {
-    std::vector<CSRLevel<N,T>>;
+    std::vector<CSRLevel<N,T>> levels;
+    uint64_t node_count;
+    uint64_t edge_count;
 };
