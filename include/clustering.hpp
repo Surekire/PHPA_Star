@@ -45,3 +45,28 @@ void bfs_clustering(CSRLevel<pos_dim, T, indexType>& graph, indexType max_node_c
         ++act_clusterID;
     }
 }
+
+template<std::size_t pos_dim = 2, typename T = int, typename indexType = uint32_t>
+void mark_gates(CSRLevel<pos_dim, T, indexType>& graph) {
+    
+
+    for(indexType act_node = 0; act_node < graph.node_count; act_node++) {
+        
+        graph.is_gate[act_node] = false;
+
+        indexType start = graph.row_ptr[act_node];
+        indexType end = graph.row_ptr[act_node + 1];
+
+        uint32_t node_cluster = graph.clusterID[act_node];
+
+        for(indexType i = start; i < end; i++) {
+            indexType nbr = graph.col_idx[i];
+
+            if(graph.clusterID[nbr] != node_cluster) {
+                graph.is_gate[act_node] = true;
+                break;
+            }
+        }
+    }
+
+}
