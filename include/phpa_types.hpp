@@ -95,6 +95,14 @@ struct CSRLevel {
     } flags;
 
 
+    // --- Cluster CSR ---
+    // Todo:    Flatten this - Order nodes, so there is no need for an CSR but only save a list
+    //          of the clusters in accending order with cluster sizes -> every information given
+
+    uint32_t num_cluster;
+    std::vector<uint32_t> cluster_row_ptr;
+    std::vector<indexType> cluster_colom_index; 
+
 
     CSRLevel() = default;
     CSRLevel(int num_nodes) {
