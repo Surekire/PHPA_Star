@@ -73,12 +73,12 @@ struct Level {
 
 template<std::size_t pos_dim = 2, typename pos_type = int, typename indexType = uint32_t>
 struct CSRLevel {
-    // --- CSR-Struktur ---
-    std::vector<indexType> row_ptr;   // size = num_nodes + 1
+    // --- Kantendaten ---
     std::vector<indexType> col_idx;   // size = num_edges
     std::vector<float>    weight;    // optional, size = num_edges
-
-    // --- Knotendaten (SoA) ---
+    
+    // --- Knotendaten ---
+    std::vector<indexType> row_ptr;   // size = num_nodes + 1
     std::vector<Position<pos_dim,pos_type>> pos;        // size = num_node
     std::vector<uint32_t>      clusterID;  // size = num_nodes
     std::vector<bool>          is_gate;    // size = num_nodes

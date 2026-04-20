@@ -18,7 +18,7 @@ struct alignas(32) event {
 static_assert(sizeof(event) == 32);
 
 struct spsc_queue {
-    static constexpr size_t CAPACITY = 1ULL << 14;
+    static constexpr size_t CAPACITY = 1ULL << 15;
     static constexpr size_t MASK     = CAPACITY - 1;
 
     // Cache-Line 1: Producer
