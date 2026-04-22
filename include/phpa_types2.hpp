@@ -12,10 +12,13 @@ struct Level_CSR {
     uint64_t cluster_count;
     uint64_t node_count;
     uint64_t edge_count;
+    uint64_t level;
+    Level_CSR* prev_level;
+    Level_CSR* next_level;
 
 
     // Cluster Data
-    std::vector<uint64_t> Cluster_ptn;
+    std::vector<uint64_t> cluster_ptn;
     
 
     // Node Data
@@ -39,7 +42,7 @@ struct Level_CSR {
 
 
     Level_CSR(uint64_t cluster_count, uint64_t node_count, uint64_t edge_count) {
-        Cluster_ptn.resize(cluster_count + 1);
+        cluster_ptn.resize(cluster_count + 1);
         
         row_ptn.resize(node_count + 1);
         clusterID.resize(node_count);
