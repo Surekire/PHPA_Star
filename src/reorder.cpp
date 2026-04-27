@@ -45,10 +45,21 @@ void Level_CSR::reorder() {
     std::vector<uint64_t> new_col_index(col_index.size());
     std::vector<float> new_weight(weight.size());
 
+    std::vector<uint64_t> degree(node_count);
+
+    for(uint64_t i = 0; i < node_count; i++) {
+        degree[permut[i]] = row_ptn[i+1] - row_ptn[i];
+    }
+
+
+    new_row_ptn[0] = 0;
+    for(size_t i = 0; i < degree.size(); i++) {
+        new_row_ptn[i + 1] = new_row_ptn[i] + degree[i];
+    }
+
+
     for(uint64_t i = 0; i < node_count; i++) {
         
-        
-        new_row_ptn[i + 1] = new_row_ptn[i] + row_ptn[permut[i] + 1] - row_ptn[permut[i]];
 
         //Nodes
         new_clusterID[permut[i]] = clusterID[i];
@@ -60,10 +71,20 @@ void Level_CSR::reorder() {
         }
 
         //Edges
-        for(uint64_t e = row_ptn[permut[i]], j = 0; e < row_ptn[permut[i] + 1]; e++, j++) {
-            new_col_index[new_row_ptn[i] + j] = col_index[e];
-            new_weight[new_row_ptn[i] + j] = weight[e];
+        for(uint64_t e = row_ptn[i], j = 0; e < row_ptn[i + 1]; e++, j++) {
+            new_col_index[new_row_ptn[permut[i]] + j] = permut[col_index[e]];
+            new_weight[new_row_ptn[permut[i]] + j] = weight[e];
         }
     }
+
+    row_ptn   = std::move(new_row_ptn);
+    clusterID = std::move(new_clusterID);
+    is_gate   = std::move(new_is_gate);
+    pos       = std::move(new_pos);
+    col_index = std::move(new_col_index);
+    weight    = std::move(new_weight);
+    if(level != 0)
+        downlink = std::move(new_downlink);
+
 
 }   
