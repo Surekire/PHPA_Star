@@ -5,6 +5,8 @@
 #include <cstdint>
 
 static constexpr size_t Dim = 2;
+static constexpr size_t max_cluster_size = 256;
+
 
 struct Level_CSR {
 
