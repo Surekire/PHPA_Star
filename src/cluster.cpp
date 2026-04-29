@@ -48,6 +48,7 @@ void Level_CSR::cluster() {
                     }
                 }
                 is_gate[node] = external_edge;
+                gates += external_edge;
             }
 
             seed++;

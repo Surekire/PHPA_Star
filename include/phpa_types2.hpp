@@ -3,9 +3,19 @@
 #include <vector>
 #include <array>
 #include <cstdint>
+#include <memory>
+#include <unordered_map>
 
 static constexpr size_t Dim = 2;
 static constexpr size_t max_cluster_size = 256;
+
+
+
+struct Path {
+    std::vector<uint64_t> nodes;
+    std::vector<float> distances;
+    float total_distance;
+};
 
 
 struct Level_CSR {
@@ -14,9 +24,8 @@ struct Level_CSR {
     uint64_t cluster_count;
     uint64_t node_count;
     uint64_t edge_count;
+    uint64_t gates;
     uint64_t level;
-    Level_CSR* prev_level;
-    Level_CSR* next_level;
 
 
     // Cluster Data
@@ -28,10 +37,10 @@ struct Level_CSR {
     std::vector<uint64_t> clusterID;
     std::vector<uint8_t> is_gate; //wegen Cache?
     
-    std::vector<std::array<uint32_t, Dim>> pos;
+    std::vector<std::array<uint32_t, Dim>> pos; //[node][dim]
     
-    std::vector<uint64_t> uplink;
-    std::vector<uint64_t> downlink;
+    std::unordered_map<uint64_t, uint64_t> uplink;  //Not every Node is an Gate
+    std::vector<uint64_t> downlink; //Every Node is Gate of Prev level
 
 
     // Edge Data
@@ -65,6 +74,25 @@ struct Level_CSR {
     void reorder();
     void cluster();
 
-    void build_level();
+
+    //Pathfinding
+    Path A_star(uint64_t start, uint64_t end); //Inter Cluster A_star. Will find node if node is adjazend to gate node, even if not in the same cluster
+
+
+};
+
+
+struct Hierarchy {
+    std::vector<Level_CSR> levels;
+    
+    Hierarchy(Level_CSR level) : levels({std::move(level)}) {}
+    Hierarchy(std::vector<Level_CSR> hierarchy) : levels(std::move(hierarchy)) {}
+
+
+
+    //Methods
+
+    //Build
+    void build_next_level();
 
 };
