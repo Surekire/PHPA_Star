@@ -15,6 +15,11 @@ struct Path {
     std::vector<uint64_t> nodes;
     std::vector<float> distances;
     float total_distance;
+
+    void add(uint64_t node, float dist) {
+        nodes.push_back(node);
+        distances.push_back(dist);
+    }
 };
 
 
