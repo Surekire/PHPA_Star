@@ -72,12 +72,16 @@ struct Level_CSR {
 
     //Methodes
 
-    void add_edge();
-    void add_node();
+
+    void add_node(std::initializer_list<uint64_t> neighbors,
+    std::initializer_list<double> weights,
+    std::initializer_list<std::array<uint32_t, Dim>> positions);
+    
+    void finilaize(); //WIP: muss hier irgednwie eingetragen werden dass die Dynamischen änderungen passieren
     
     //Reorders Nodes to pack there Cluster ID together
     void reorder();
-    void cluster();
+    void cluster(Level_CSR& prev);
 
 
     //Pathfinding
